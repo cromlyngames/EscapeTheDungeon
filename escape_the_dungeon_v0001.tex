@@ -27,6 +27,7 @@
 \newcommand{\mylistend}{\tikz[overlay]\draw(-.2,.15)--(-.2,.4) [path fading=east](-.2,.15)--(.1,.15);} %adds the |- shape to the start of each list item
 \newcommand{\myitem}{\item[\mylist]} %defines the scope of the mylist command to be 2nd level sublists
 \newcommand{\myitemend}{\item[\mylistend]} %defines the scope of the mylist command to be 2nd level sublists
+%\renewcommand\labelitemi{---}  % turns bullets into long dashes
 
 %%
 % For nicely typeset tabular material
@@ -57,21 +58,6 @@
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
 
-%%
-% Some shortcuts for Tufte's book titles.  The lowercase commands will
-% produce the initials of the book title in italics.  The all-caps commands
-% will print out the full title of the book in italics.
-\newcommand{\vdqi}{\textit{VDQI}\xspace}
-\newcommand{\ei}{\textit{EI}\xspace}
-\newcommand{\ve}{\textit{VE}\xspace}
-\newcommand{\be}{\textit{BE}\xspace}
-\newcommand{\VDQI}{\textit{The Visual Display of Quantitative Information}\xspace}
-\newcommand{\EI}{\textit{Envisioning Information}\xspace}
-\newcommand{\VE}{\textit{Visual Explanations}\xspace}
-\newcommand{\BE}{\textit{Beautiful Evidence}\xspace}
-
-\newcommand{\TL}{Tufte-\LaTeX\xspace}
-
 % Prints the month name (e.g., January) and the year (e.g., 2008)
 \newcommand{\monthyear}{%
   \ifcase\month\or January\or February\or March\or April\or May\or June\or
@@ -101,51 +87,6 @@
 \newcommand{\measure}[3]{#1/#2$\times$\unit[#3]{pc}}
 
 % Macros for typesetting the documentation
-\newcommand{\hlred}[1]{\textcolor{Maroon}{#1}}% prints in red
-\newcommand{\hangleft}[1]{\makebox[0pt][r]{#1}}
-\newcommand{\hairsp}{\hspace{1pt}}% hair space
-\newcommand{\hquad}{\hskip0.5em\relax}% half quad space
-\newcommand{\TODO}{\textcolor{red}{\bf TODO!}\xspace}
-\newcommand{\na}{\quad--}% used in tables for N/A cells
-\providecommand{\XeLaTeX}{X\lower.5ex\hbox{\kern-0.15em\reflectbox{E}}\kern-0.1em\LaTeX}
-\newcommand{\tXeLaTeX}{\XeLaTeX\index{XeLaTeX@\protect\XeLaTeX}}
-% \index{\texttt{\textbackslash xyz}@\hangleft{\texttt{\textbackslash}}\texttt{xyz}}
-\newcommand{\tuftebs}{\symbol{'134}}% a backslash in tt type in OT1/T1
-\newcommand{\doccmdnoindex}[2][]{\texttt{\tuftebs#2}}% command name -- adds backslash automatically (and doesn't add cmd to the index)
-\newcommand{\doccmddef}[2][]{%
-  \hlred{\texttt{\tuftebs#2}}\label{cmd:#2}%
-  \ifthenelse{\isempty{#1}}%
-    {% add the command to the index
-      \index{#2 command@\protect\hangleft{\texttt{\tuftebs}}\texttt{#2}}% command name
-    }%
-    {% add the command and package to the index
-      \index{#2 command@\protect\hangleft{\texttt{\tuftebs}}\texttt{#2} (\texttt{#1} package)}% command name
-      \index{#1 package@\texttt{#1} package}\index{packages!#1@\texttt{#1}}% package name
-    }%
-}% command name -- adds backslash automatically
-\newcommand{\doccmd}[2][]{%
-  \texttt{\tuftebs#2}%
-  \ifthenelse{\isempty{#1}}%
-    {% add the command to the index
-      \index{#2 command@\protect\hangleft{\texttt{\tuftebs}}\texttt{#2}}% command name
-    }%
-    {% add the command and package to the index
-      \index{#2 command@\protect\hangleft{\texttt{\tuftebs}}\texttt{#2} (\texttt{#1} package)}% command name
-      \index{#1 package@\texttt{#1} package}\index{packages!#1@\texttt{#1}}% package name
-    }%
-}% command name -- adds backslash automatically
-\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
-\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
-\newenvironment{docspec}{\begin{quotation}\ttfamily\parskip0pt\parindent0pt\ignorespaces}{\end{quotation}}% command specification environment
-\newcommand{\docenv}[1]{\texttt{#1}\index{#1 environment@\texttt{#1} environment}\index{environments!#1@\texttt{#1}}}% environment name
-\newcommand{\docenvdef}[1]{\hlred{\texttt{#1}}\label{env:#1}\index{#1 environment@\texttt{#1} environment}\index{environments!#1@\texttt{#1}}}% environment name
-\newcommand{\docpkg}[1]{\texttt{#1}\index{#1 package@\texttt{#1} package}\index{packages!#1@\texttt{#1}}}% package name
-\newcommand{\doccls}[1]{\texttt{#1}}% document class name
-\newcommand{\docclsopt}[1]{\texttt{#1}\index{#1 class option@\texttt{#1} class option}\index{class options!#1@\texttt{#1}}}% document class option name
-\newcommand{\docclsoptdef}[1]{\hlred{\texttt{#1}}\label{clsopt:#1}\index{#1 class option@\texttt{#1} class option}\index{class options!#1@\texttt{#1}}}% document class option name defined
-\newcommand{\docmsg}[2]{\bigskip\begin{fullwidth}\noindent\ttfamily#1\end{fullwidth}\medskip\par\noindent#2}
-\newcommand{\docfilehook}[2]{\texttt{#1}\index{file hooks!#2}\index{#1@\texttt{#1}}}
-\newcommand{\doccounter}[1]{\texttt{#1}\index{#1 counter@\texttt{#1} counter}}
 
 % Generates the index
 \usepackage{makeidx}
@@ -265,22 +206,19 @@ We're going to start with the base outline of what the GM should be doing, then 
 
 \bigskip
 \section{Agenda}\label{sec:Agenda}\index{agenda}
-\begin{enumerate}
-   %\begin{itemize}
+\begin{itemize}
     \item Agenda
 	\begin{itemize}
 	\myitem Play to find out what happens
 	\myitem Make the players'  character's lives not boring
 	\myitemend Subvert that which is taken from granted
 	\end{itemize}
-   %\end{itemize}
-\end{enumerate}
+\end{itemize}
 The Agenda is the key thing. If you, as GM, are in doubt what to do, choose the thing that follows the agenda. It's not a bad guide for players either.
 
 \bigskip
 \section{Principles}\label{sec:Principles}\index{principles}
-\begin{enumerate}
-   %\begin{itemize}
+\begin{itemize}
 	\item Principles
 	\begin{itemize}
 	\myitem don't waste your players' time
@@ -296,8 +234,7 @@ The Agenda is the key thing. If you, as GM, are in doubt what to do, choose the 
 	\myitem ask loaded questions and build on the answers 
 	\myitemend sometimes, reflect a question back upon the players 
 	\end{itemize}
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 \bigskip
 The Principles are what the GM should be doing if they have their mouth open. If she's chewing pizza instead, call her out on it. Exactly how they translate to the fiction will vary on the tone of the game. These rules are supposed to support a game with a strong undercurrent of pathos with the silliness. The situation is ridiculous, because a lot of fantasy is ridiculous, but a lot of the player characters should be sympathetic or relatable as they struggle in this crazy situation.\footnote{A bit like most sitcoms}  Fundamentally, they are outside of the mainstream surface society and trying to retain a sense of identity when it'd be much easier to slide into institutionalisation. The Dungeon only wants to help, to protect them from the weird outside world where there's no roof and much less glowy rocks. The GM represents the dungeon.
 
@@ -307,16 +244,14 @@ The Principles are what the GM should be doing if they have their mouth open. If
 You play as an underling, someone or something recently awoken from your role in the broader dungeon. The dungeon ain't to happy about that, by the way. You'll have a playbook with some moves unique to you, some stats to help define how good you are at different things, some \smallcaps{demons} that represent the things you fear and probably some other stuff like a tribe or some mates or a hoard or a soul-sucking artifact of glowy evilness. You also have access to the basic moves. Everyone has them, and they should be pretty useful.
 
 There are six main stats in this game.
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 \item \smallcaps{WIZARD} - how good you are brainpower, thinking or arcane magic stuff
 \item \smallcaps{THIEF} - how good you are with cunning and delicate or precise skill
 \item \smallcaps{FIGHTER} - how good you are with violence or raw strength
 \item \smallcaps{BARD} - how good you are with charm and social connections
 \item \smallcaps{Identity} - how good you are at remembering who you actually are beneath the stereotypes.
 \item \smallcaps{Health} - how much more damage you can take, for now
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 
 They'll get set in your playbook. Different underlings have different stats. They may change over play too. Identity certainly will. Unless the move specifically says so, none of those five stats can go above +3 (or below -2, if you are a masochist). A move that uses a stat will state something like \smallcaps{roll + stat name}. That means roll two  normal six-sided dice and add the total to your stat. If you have \smallcaps{wizard} of -1, and you roll a 2 and a 5 the total is 6. Most rules use the format of get 6 or below total and you've messed up, get 7-9 and you succeed, but at a cost. Rolling 10+ is a success, sometimes with a bonus. Try to do that.
 Sometime you'll see things like a +1 forward. That means you get to add +1 to your next roll. In the case above, that'd be enough to turn the 6 into 7 and the dangerous failure into a dangerous success.
@@ -337,8 +272,7 @@ During play, or possibly starting out, you'll pick up items of various use. The 
 
 \section{WIZARD: basic move}
 When you try to solve a problem with raw brainpower, knowledge or magic \smallcaps{roll+wizard}.
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 \item On a 7+ you succeed at your objective OR you cast a damaging spell of raw magic.\footnote{This represents basic, almost instinctual attacks. Detailed wizard spells are in the playbooks. The difference is like hitting someone with a ripped open electricity wire and constructing a freezer, or a drill or a light bulb that can take the electricity and make something new with it.}
 \item On a 10+ you succeed at your objective. Choose two:
 	\begin{itemize}
@@ -350,8 +284,7 @@ When you try to solve a problem with raw brainpower, knowledge or magic \smallca
 	\end{itemize}
 \item On a 7-9 you succeed at your objective AND deal one damage to someone
 \item On a 6- you deal one damage to yourself or an ally
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 \bigskip
 
 
@@ -360,8 +293,7 @@ When you try to solve a problem with raw brainpower, knowledge or magic \smallca
 \section{THIEF: basic move}
 When you try to solve a problem with cunning, treachery or precise and delicate application of skill \smallcaps{roll+ thief}
 \footnote{This is the stat to roll for stealth, or dodging arrows too. When it comes to lies and blather, there is some overlap with Bard moves. The GM is encouraged to be relaxed about this, but keep an eye on the consequences of a miss. }
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 \item on a 7+ you succeed at your objective OR deal one damage\footnote{if your objective was to deal damage, then deal damage.}
 \item on a 10+ choose three from below
 \item on a 7-9 choose one:
@@ -374,15 +306,13 @@ When you try to solve a problem with cunning, treachery or precise and delicate 
 	\item Now the GM chooses a remaining option to move against. 
 	\end{itemize}
 \item On a 6- the GM may choose two options.
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 \bigskip
 
 \section{FIGHTER: basic move}
 When you try to solve a problem with violence, strength or sheer athleticism \smallcaps{Roll + Fighter}:
 \footnote{This is the stat to roll for breaking down doors, taking blows on a shield or arm-wrestling in the ork canteen. There is some blurriness with \smallcaps{thief}. Stabbing someone in a fight is a fighter move, but stabbing them in the back is a thief. Shooting a charging hero is direct violence and typically therefore \smallcaps{fighter}, but trying to pull off a trick shot that pins their dagger hand to the wall might be \smallcaps{Thief}. The GM is encouraged to be relaxed about this, but encourage thought about the consequence of a miss. If players are pushing \smallcaps{thief} to try and avoid blowback damage, the GM should hit them with some very hard direct moves when a golden opportunity arrives. Players. I hope you read this.}
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 \item On a 7+ you succeed at you objective OR deal two damage.
 \item On a 10+: that's it, you succeeded. Deal with the consequences.
 \item On a 7-9: the player chooses two:
@@ -395,15 +325,13 @@ When you try to solve a problem with violence, strength or sheer athleticism \sm
 	\myitemend Click! next move by anyone triggers a trap 
 	\end{itemize}
 \item On a 6 or below: no success, but choose one from the list anyway
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 
 \bigskip
 
 \section{BARD: basic move}
 When you try to solve a problem with charm, social connections or distraction, \smallcaps{roll+bard}:
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 \item On a 7+ you succeed at your objective
 \item On a 10+: that's it, you succeeded. Deal with the consequences.
 \item On a 7-9 choose two:
@@ -416,15 +344,13 @@ When you try to solve a problem with charm, social connections or distraction, \
 	\myitem They offer you a further opportunity, with a catch
 	\end{itemize}
 \item on a 6- the GM chooses another player who chooses one for you.
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 
 \bigskip
 
 \section{IDENTITY: basic move}
 When you draw on knowledge of the dungeon, or wake after a \smallcaps{long rest}, then say the thing you know because of your role in the dungeon. You get that statement free. Now \smallcaps{roll + identity}
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 	\item On a 10+ Describe a hobby\footnote{Ideally this should be something outside of your stereotypical job. It's something you value and think about in your spare time and makes plans for. 'Three different times' doesn't mean three cups of tea satisfies a 'tea party' hobby for a Brute. It has to cost something}. Add it to your playbook. Gain +1 Identity when you have acted on that hobby three different times.
 	\item On a 7-9you keep a sense of identity but the dungeon presses on you. Choose one:
 	\begin{itemize}
@@ -433,46 +359,56 @@ When you draw on knowledge of the dungeon, or wake after a \smallcaps{long rest}
 	\myitemend I had a fierce rival in my job 
 	\end{itemize}
 	\item On a 6- you slip back into your role. Mindlessly do what your job demands until obstructed or you fail a roll.
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 \bigskip
 
 \section{One Foot in the Grave: Basic move}
 When your health hits zero choose one:
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 \item Die free.
 \item Come Back: The dungeon isn't done with you. Take -1 to your two highest stats, and wake up later with 3Hp and holes in your memory.
-\item Undergo a sea change: The dungeon has a new role for you. Switch to a new playbook as the story demands.\footnote{\smallcaps{undead} or \smallcaps{creep} are obvious, but hideous experiments could bring you back as a \smallcaps{Hybrid, Brute, Beast} ect.} Unless the GM feels merciful assume all your items are stolen while your are out. You keep one hobby and one move but switch stats, including identity. 
+\item Undergo a sea change: The dungeon has a new role for you. Wake up later with a new playbook as the story demands.\footnote{\smallcaps{undead} or \smallcaps{creep} are obvious, but hideous experiments could bring you back as a \smallcaps{Hybrid, Brute, Beast} ect.} Unless the GM feels merciful assume all your items are stolen while you are dead to the world. You keep one hobby and one move but switch stats, including identity. 
 \item 'He who kills monsters': where it makes sense, you may come back as the NPC who killed you. Choose an appropriate playbook that's not in use and get with the GM.
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 
 
-\section{Help or Interfere}
-Most Powered By the Apocalypse games include a move that allows you to modify someone else's roll if you take concrete action to support their action. In this game, this is handled in playbook moves and the \smallcaps{Wizard} move. If it is player character vs player character, you don't both \smallcaps{Roll+Fighter} to see who wins. The first person within the fiction to do something that triggers the move does the move, finishes the move and then the fiction continues.\footnote{Designer's note. I am a bit worried about how this will work out. Every game seems to try something different to Hx, and non seem to have settled on a good solution}
+\section{Help or Interfere}\footnote{Designer's note. I am a bit worried about how this will work out. Every game seems to try something different to Hx, and non seem to have settled on a good solution}
 
+Most Powered By the Apocalypse games include a move that allows you to modify someone else's roll if you take concrete action to support their action. In this game, this is handled in playbook moves and the \smallcaps{Wizard} move. If it is player character vs player character, you don't both \smallcaps{Roll+Fighter} to see who wins. The first person within the fiction to do something that triggers the move does the move, finishes the move and then the fiction continues.
 
 
 %% --------------------------------------------------------
 
 \chapter{Brute}
 
-Statistics: \smallcaps{Fighter +3}. +1 and -1 to any of the others.
-\bigskip
-Job(Pick 1): Guard; Gladiator; Miner; Chef
-\bigskip
-Demon(Pick 3): Weakness; Stupidity; Chains; Accidental Harm; Electricity
-\bigskip
-Hobbies (fill in during play): 
-\bigskip
+\marginnote{Them? They were dead when I got 'ere. Natural shape for dwarves is that, two little shoes poking out of a helmet. Sniff.
+
+}
+
+\marginnote{Name: Thoth, Ug, Charlie, Caliban, Schtump, Stoor, Begbie}
+
+\marginnote{Appearance (Pick 2): Hunchback; horns, no neck; huge shoulders; knuckle dragger; (broken)manacles; kilt; tattoos}  
+
+\marginnote{Statistics: Start with \smallcaps{Fighter +3}. +1 and -1 to any of the others.
+}
+\marginnote{Job (Pick 1): Guard; Gladiator; Miner; Chef
+}
+\marginnote{Demon (Pick 3): Weakness; Stupidity; Chains; Accidental Harm; Electricity
+}
+
+\marginnote{Hobbies (fill in during play): 
+\begin{itemize}
+\item [][][][] 
+\item [][][][] 
+\item [][][][] 
+\end{itemize}
+\bigskip}
 
 Start with two moves.
 
 \section{Gut Feeling: Brute Move}
 When you witness a successful \smallcaps{fighter} move then you can \smallcaps{roll + wizard}:
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 \item On a 10+ you may ask two of the GM or the player.
 \item On a 7-9 you may ask one:
 	\begin{itemize}
@@ -483,8 +419,7 @@ When you witness a successful \smallcaps{fighter} move then you can \smallcaps{r
 	\myitemend Who trained them?
 	\end{itemize}
 \item On a 6- you join the fight instead.
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 
 \section{Roaring Charge: Brute Move}
 When you charge into another player's fight you may destroy the weapon you are holding to get +1 Fight (to a max of +4) for the scene.
@@ -492,8 +427,7 @@ When you charge into another player's fight you may destroy the weapon you are h
 \section{Couple of mates: Brute Move}
 You have a couple of stupid and unruly mates. Name them. Name the body part that drives them.
 When you want them to do anything other than join a fight\footnote{sometimes including stopping again} then \smallcaps{roll + bard}
-\begin{enumerate}
-%\begin{itemize}
+\begin{itemize}
 \item On a 10+ they do it just like you asked.
 \item On a 7-9 choose one:
 	\begin{itemize}
@@ -503,12 +437,11 @@ When you want them to do anything other than join a fight\footnote{sometimes inc
 	\myitemend They obey like the dungeon demands. Take -1 Identity.
 	\end{itemize}
 \item On a 6- they do their own thing.
-%\end{itemize}
-\end{enumerate}
+\end{itemize}
 
 \section{It's a Weapon!: Brute Move}
 When you have taken damage and are weaponless, \smallcaps{Roll + fighter}
-\begin{enumerate}
+
 \begin{itemize}
 \item On a 7+ you find something to use as a weapon
 \item On a 10+ choose one:
@@ -519,14 +452,36 @@ When you have taken damage and are weaponless, \smallcaps{Roll + fighter}
 	\end{itemize}
 \item On a 6- you find something, but can't get to it quickly enough
 \end{itemize}
-\end{enumerate}
+
 
 \section{Scarred: Brute Move}
 When you take damage and reach your last health (1Hp), \smallcaps{mark xp} and resolve any new advances immediately. 
 
+
+\section{Experience}
+\begin{itemize}
+\item [][][] add a Brute move
+\item [][][] +1 to any stat
+\item [][][] add a Brute move
+\item [][][] +1 to any stat
+\item [][][] add a move from another playbook
+\item [][][] add a Brute move
+\end{itemize}
 %% ---   ---   ---   ---   ---   
 
 \chapter{Creep} % formerly Shadowkin
+Statistics: \smallcaps{Fighter +3}. +1 and -1 to any of the others.
+\bigskip
+Job(Pick 1): Jester; Informant; Messenger; Power Source
+\bigskip
+Demon(Pick 3): Weakness; Stupidity; Chains; Accidental Harm; Electricity
+\bigskip
+Hobbies (fill in during play): 
+\bigskip
+
+Start with two moves.
+
+
 
 %% ---   ---   ---   ---   ---   
 \chapter{Undead}
