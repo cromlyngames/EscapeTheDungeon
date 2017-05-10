@@ -89,8 +89,10 @@
 % Macros for typesetting the documentation
 
 % Generates the index
-\usepackage{makeidx}
-\makeindex
+\usepackage{imakeidx}
+%\makeindex[name=moves, title={Index of moves}] % on reflection, not needed. 
+\makeindex[name=stuff, title ={Index of elements, items}]
+\makeindex % general index for playbooks and stuff
 
 \begin{document}
 
@@ -268,13 +270,19 @@ During play, or possibly starting out, you'll pick up items of various use. The 
 
 \smallcaps{Xp} stands for Experience and represents  how far down the path to the extreme eXpression of your stereotype you've walked, lurched or slithered. Collecting \smallcaps{Xp} will unlock more moves, stat bonuses, moves from other playbooks or more major character development. These advances will be shown in the playboook.
 
-\smallcaps{objectives vs damage} \index{objectives vs damage}. In the basic moves below, commonly you will be told you've succeeded at your objective OR you deal damage. There are two intentions here. The first is to allow a move to be used for different problems where damage is not appropriate: "I want to climb out of the pit", "I want to pick the lock", "I want to study the runes, see if I can find a clue to the ritual." The second intention is to clarify how much damage you do if your objective is something like "I move to stab her in the back," "I exhale and shoot an arrow at that gap in his armour.". Basically, you can't state your objective is to 'behead the world-turtle' and succeed when Great A'Tuin still has a few thousand hitpoints left.\footnote{And the corollary is that the GM should note that relying on hitpoints is bad challenge design. You should be building a jungle-gym not a treadmill. There's an excellent essay for Dungeon World called "The 16Hp Dragon" that provides some good rules of thumb.} As a rule, the \smallcaps{fighter} should be able to deal the most damage to a single target, the \smallcaps{thief} can spread it around but might go through a lot of vials of poison or throwing knives and the \smallcaps{Wizard} is an unstable powderkeg of potential.
+\smallcaps{objectives vs damage} \index{objectives vs damage}. In the basic moves below, commonly you will be told you've succeeded at your objective OR you deal damage. There are two intentions here. The first is to allow a move to be used for different problems where damage is not appropriate: "I want to climb out of the pit", "I want to pick the lock", "I want to study the runes, see if I can find a clue to the ritual." The second intention is to clarify how much damage you do if your objective is something like "I move to stab her in the back," "I exhale and shoot an arrow at that gap in his armour.". Basically, you can't state your objective is to 'behead the world-turtle' and succeed when Great A'Tuin still has a few thousand hitpoints left.\footnote{And the corollary is that the GM should note that relying on hitpoints is bad challenge design. You should be building a jungle-gym not a treadmill. There's an excellent essay for Dungeon World called "The 16Hp Dragon" that provides some good rules of thumb.} As a rule, the \smallcaps{fighter} should be able to deal the most damage to a single target, the \smallcaps{thief} can spread it around but might go through a lot of vials of poison\index[stuff]{poison in vials} or throwing knives\index[stuff]{throwing knives} and the \smallcaps{Wizard} is an unstable powderkeg of potential.
 \bigskip
+
+\section{Help or Interfere}\index{help}\index{interfere}
+
+If you want to help or interfere with another player's move, say what you are doing and take that as the objective for a basic move. If you succeed, you can gift them a +1 to their roll, or 'gift' them a -2, if you are hindering them.This stacks with the +1 option in the \smallcaps{Wizard} move. If it is player character vs player character, you don't both \smallcaps{Roll+Fighter} to see who wins. The first person within the fiction to do something that triggers the move does the move, the other person hinders if they want, resolves their move, then the first player finishes the move and then the fiction continues.
+Why would you do this instead of doing something for yourself? Sometimes failure is not an option (They're coming, Urg, Steve the  Tortoise, break the door down NOW!), or perhaps you are helping them pull off a unique playbook move. An example might be "I throw sand\index[stuff]{sand} in hero's eyes to allow the Brute to get his "Couple of Mates" into the action. Rather them then me!"
+
 
 \section{WIZARD: basic move}\index{Wizard: basic move}
 When you try to solve a problem with raw brainpower, knowledge or magic \smallcaps{roll+wizard}.
 \begin{itemize}
-\item On a 7+ you succeed at your objective OR you cast a damaging spell of raw magic.\footnote{This represents basic, almost instinctual attacks. Detailed wizard spells are in the playbooks. The difference is like hitting someone with a ripped open electricity wire and constructing a freezer, or a drill or a light bulb that can take the electricity and make something new with it.}
+\item On a 7+ you succeed at your objective OR you cast a damaging spell of raw magic\index[stuff]{magic, raw}.\footnote{This represents basic, almost instinctual attacks. Detailed wizard spells are in the playbooks. The difference is like hitting someone with a ripped open electricity wire and constructing a freezer, or a drill or a light bulb that can take the electricity and make something new with it.}
 \item On a 10+ you succeed at your objective. Choose two:
 	\begin{itemize}
 	\myitem Deal one damage to someone
@@ -293,7 +301,7 @@ When you try to solve a problem with raw brainpower, knowledge or magic \smallca
 
 \section{THIEF: basic move}\index{Thief: basic move}
 When you try to solve a problem with cunning, treachery or precise and delicate application of skill \smallcaps{roll+ thief}
-\footnote{This is the stat to roll for stealth, or dodging arrows too. When it comes to lies and blather, there is some overlap with Bard moves. The GM is encouraged to be relaxed about this, but keep an eye on the consequences of a miss. }
+\footnote{This is the stat to roll for stealth, or dodging arrows\index[stuff]{arrows} too. When it comes to lies and blather, there is some overlap with Bard moves. The GM is encouraged to be relaxed about this, but keep an eye on the consequences of a miss. }
 \begin{itemize}
 \item on a 7+ you succeed at your objective OR deal one damage\footnote{if your objective was to deal damage, then deal damage.}
 \item on a 10+ choose three from below
@@ -312,7 +320,7 @@ When you try to solve a problem with cunning, treachery or precise and delicate 
 
 \section{FIGHTER: basic move}\index{Fighter: basic move}
 When you try to solve a problem with violence, strength or sheer athleticism \smallcaps{Roll + Fighter}:
-\footnote{This is the stat to roll for breaking down doors, taking blows on a shield or arm-wrestling in the ork canteen. There is some blurriness with \smallcaps{thief}. Stabbing someone in a fight is a fighter move, but stabbing them in the back is a thief. Shooting a charging hero is direct violence and typically therefore \smallcaps{fighter}, but trying to pull off a trick shot that pins their dagger hand to the wall might be \smallcaps{Thief}. The GM is encouraged to be relaxed about this, but encourage thought about the consequence of a miss. If players are pushing \smallcaps{thief} to try and avoid blowback damage, the GM should hit them with some very hard direct moves when a golden opportunity arrives. Players. I hope you read this.}
+\footnote{This is the stat to roll for breaking down doors, taking blows on a shield\index[stuff]{shield} or arm-wrestling in the ork canteen. There is some blurriness with \smallcaps{thief}. Stabbing someone in a fight is a fighter move, but stabbing them in the back is a thief. Shooting a charging hero is direct violence and typically therefore \smallcaps{fighter}, but trying to pull off a trick shot that pins their dagger\index[stuff]{dagger} hand to the wall might be \smallcaps{Thief}. The GM is encouraged to be relaxed about this, but encourage thought about the consequence of a miss. If players are pushing \smallcaps{thief} to try and avoid blowback damage, the GM should hit them with some very hard direct moves when a golden opportunity arrives. Players. I hope you read this.}
 \begin{itemize}
 \item On a 7+ you succeed at you objective OR deal two damage.
 \item On a 10+: that's it, you succeeded. Deal with the consequences.
@@ -350,9 +358,9 @@ When you try to solve a problem with charm, social connections or distraction, \
 \bigskip
 
 \section{IDENTITY: basic move}\index{Identity: basic move}
-When you draw on knowledge of the dungeon, or wake after a \smallcaps{long rest}, then say the thing you know because of your role in the dungeon. You get that statement free. Now \smallcaps{roll + identity}
+When you draw on knowledge of the dungeon, or wake after a \smallcaps{long rest}, then say the thing you know because of your role or job in the dungeon. You get that statement free. The GM needs to do their best to make it true. Now \smallcaps{roll + identity}
 \begin{itemize}
-	\item On a 10+ Describe a hobby\footnote{Ideally this should be something outside of your stereotypical job. It's something you value and think about in your spare time and makes plans for. 'Three different times' doesn't mean three cups of tea satisfies a 'tea party' hobby for a Brute. It has to cost something}. Add it to your playbook. Gain +1 Identity when you have acted on that hobby three different times.
+	\item On a 10+ Describe a hobby\footnote{Ideally this should be something outside of your stereotypical job. It's something you value and think about in your spare time and makes plans for. 'Three different times' doesn't mean three cups of tea\index[stuff]{teacups} satisfies a 'tea party' hobby for a Brute. It has to cost something}. Add it to your playbook. Gain +1 Identity when you have acted on that hobby three different times.
 	\item On a 7-9you keep a sense of identity but the dungeon presses on you. Choose one:
 	\begin{itemize}
 	\myitem I loved that part of my job
@@ -371,15 +379,12 @@ When your health hits zero choose one:
 \begin{itemize}
 \item Die free.
 \item Come Back: The dungeon isn't done with you. Take -1 to your two highest stats, and wake up later with 3Hp and holes in your memory.
-\item Undergo a sea change: The dungeon has a new role for you. Wake up later with a new playbook as the story demands.\footnote{\smallcaps{undead} or \smallcaps{creep} are obvious, but hideous experiments could bring you back as a \smallcaps{Hybrid, Brute, Beast} ect.} Unless the GM feels merciful assume all your items are stolen while you are dead to the world. You keep one hobby and one move but switch stats, including identity. 
+\item Undergo a sea change: The dungeon has a new role for you. Wake up later with a new playbook as the story demands.\footnote{\smallcaps{undead} or \smallcaps{creep} are obvious, but hideous experiments\index[stuff]{hideous experiments} could bring you back as a \smallcaps{Hybrid, Brute, Beast} ect.} Unless the GM feels merciful assume all your items are stolen while you are dead to the world. You keep one hobby and one move but switch stats, including identity. 
 \item 'He who kills monsters': where it makes sense, you may come back as the NPC who killed you. Choose an appropriate playbook that's not in use and get with the GM.
 \end{itemize}
 
 
 
-\section{Help or Interfere}\index{help}\index{interfere}\footnote{Designer's note. I am a bit worried about how this will work out. Every game seems to try something different to Hx, and non seem to have settled on a good solution}
-
-Most Powered By the Apocalypse games include a move that allows you to modify someone else's roll if you take concrete action to support their action. In this game, this is handled in playbook moves and the \smallcaps{Wizard} move. If it is player character vs player character, you don't both \smallcaps{Roll+Fighter} to see who wins. The first person within the fiction to do something that triggers the move does the move, finishes the move and then the fiction continues.
 
 
 \chapter{Playbook Summary}
@@ -422,7 +427,7 @@ Them? They were dead when I got 'ere. Natural shape for dwarves is that, two lit
 \marginnote{Appearance (Pick 1-3): Hunchback; horns, no neck; huge shoulders; knuckle dragger; (broken)manacles; kilt; tattoos\bigskip}  
 \marginnote{Statistics: Start with \smallcaps{Fighter +3}. +1 and -1 to any of the others.\bigskip}
 \marginnote{Job (Pick 1): Guard; Gladiator; Miner; Chef\bigskip}
-\marginnote{Demon (Pick 3): Weakness; Stupidity; Chains; Accidental Harm; Electricity\bigskip}
+\marginnote{Demon (Pick 3): Weakness; Stupidity; Chains\index[stuff]{chains}; Accidental Harm; Electricity\index[stuff]{electricity}\bigskip}
 \marginnote{Hobbies (fill in during play): 
 \begin{itemize}
 \item [][][][] 
@@ -506,7 +511,7 @@ Sure baby, I can make you feel better. Just let me hold you and pull up a warm a
 \marginnote{Appearance (choose 1-3): Rippling cloak; glowing eyes; bony fingers; scissors; tendrils; smokey hair; blank face\bigskip}
 \marginnote{Statistics: \smallcaps{Wizard +2 Thief +1}. +1 and -1 to any of the others.\bigskip}
 \marginnote{Job(Pick 1): Jester; Informant; Messenger; Power Source\bigskip}
-\marginnote{Demon(Pick 3): Weakness; Stupidity; Chains; Accidental Harm; Electricity\bigskip}
+\marginnote{Demon(Pick 3): Forgetting; Being Forgotten; Guilt; Hunger; Light\index[stuff]{light}\bigskip}
 \marginnote{Hobbies (fill in during play): 
 \begin{itemize}
 \item [][][][] 
@@ -527,7 +532,7 @@ Sure baby, I can make you feel better. Just let me hold you and pull up a warm a
 Start with two moves and a chorus
 
 \section{Chorus}\index{Chorus}
-A creep is always accompanied by a \smallcaps{chorus} -  a collection of soul fragments sustained by energies leaking through the hole in the world that the creep represents. The chorus members are fragments patched together almost randomly - faces squished together, rats and bat spirits filling holes in skin or missing body parts. The chorus are simple minded, fixated on pet topics and without agency.
+A creep is always accompanied by a \smallcaps{chorus} -  a collection of soul fragments\index[stuff]{soul fragments} sustained by energies leaking through the hole in the world that the creep represents. The chorus members are fragments patched together almost randomly - faces squished together, rats and bat spirits filling holes in skin or missing body parts. The chorus are simple minded, fixated on pet topics and without agency.
 
 \section{Commune}\index{Commune: move}
 When you ask a question of the chorus \smallcaps{roll +wizard}
@@ -547,7 +552,7 @@ When you ask a question of the chorus \smallcaps{roll +wizard}
 \section{Brain slither}\index{Brain slither: move}
 When you break somebody's skin, \smallcaps{roll + Wizard}:
 \begin{itemize}
-\item On a 7+ you steal their shadow and hold it indefinitely.
+\item On a 7+ you steal their shadow\index[stuff]{shadow} and hold it indefinitely.
 \item On a 7-9 you can release that shadow at any time to summon one of their demons
 \item On a 10+ you can name the specific demon too
 \item On a 6- their demon comes looking for you both
@@ -559,8 +564,8 @@ When a memory is killed or lost to the world and you add them to the chorus \sma
 \item On a 10+ choose three from the list below
 \item On a 7-9 choose two:
 	\begin{itemize}
-	\myitem You can teleport between shadow
-	\myitem You can create a pool of darkness
+	\myitem You can teleport between shadow\index[stuff]{shadow}
+	\myitem You can create a pool of darkness\index[stuff]{darkness}
 	\myitem You can fill a room with silence
 	\myitem You don't loose an identity point (-1 to Identity otherwise)
 	\end{itemize}
@@ -575,7 +580,7 @@ When you wrap around someone \smallcaps{Roll + Thief}:
 \item On a 7-9 choose two:
 	\begin{itemize}
 	\myitem Temporarily increase their \smallcaps{Wizard} by +1
-	\myitem You can enter their dreams and memories
+	\myitem You can enter their dreams and memories\index[stuff]{dreams and memories}
 	\myitem They can use your powers from \smallcaps{Black Leech}
 	\myitem You don't heal them one health at the cost of two damage to yourself.
 	\end{itemize}
@@ -588,13 +593,13 @@ At the end of a session where you entertained the table by playing the chorus vo
 %% ---   ---   ---   ---   ---   
 \chapter{Undead}\index{Undead: playbook}
 
- I've waited a long time. The only way to power in this place is a dead man's shoes.
+ I've waited a long time. The only way to power in this place is a dead man's shoes\index[stuff]{shoes}.
 
 \marginnote{Name:Azalgot; Sssinter; Kn'kle; Leech; Vertebran \bigskip}
 \marginnote{Appearance (choose 1-3): Skeletal; rotting corpse; wrappings; glowing runes; armoured; pierced; crawling with maggots\bigskip}
 \marginnote{Statistics: \smallcaps{Wizard +2 Fighter +1}. \bigskip}
 \marginnote{Job(Pick 1): Honour Guard; Sentinel; Smith; Channeler \bigskip}
-\marginnote{Demon(Pick 3): Chaos; Being Human; Logical paradoxes; Growth; Theft\bigskip}
+\marginnote{Demon(Pick 3): Chaos; Being Human; Logical paradoxes; Growth\index[stuff]{growth, verdancy}; Theft\bigskip}
 \marginnote{Hobbies (fill in during play): 
 \begin{itemize}
 \item [][][][] 
@@ -615,14 +620,14 @@ At the end of a session where you entertained the table by playing the chorus vo
 Start with two moves and two artifacts
 
 \section{Artifacts}\index{Artifacts}
-At the start of the game choose two different artifacts. Add a descriptive tag (or get with the GM for to customise further) As long as the artifact is in your posession you gain that statistic bonus. If the artifact is out of your possession you have a sense of roughly where it is.:
+At the start of the game choose two different artifacts. Add a descriptive tag (or get with the GM for to customise further) As long as the artifact is in your possession you gain that statistic bonus. If the artifact is out of your possession you have a sense of roughly where it is.:
 \begin{itemize}
 \item Choose two different rows:
 	\begin{itemize}
-	\myitem Shield \smallcaps(+1 Fighter)
-	\myitem Spear \smallcaps(+1 Fighter)
-	\myitem Staff/Crown/Necklace \smallcaps(+1 Wizard)
-	\myitem Instrument \smallcaps(+1 Bard)
+	\myitem Shield \smallcaps(+1 Fighter) \index[stuff]{shield}
+	\myitem Spear \smallcaps(+1 Fighter) \index[stuff]{spear}
+	\myitem Staff/Crown/Necklace \smallcaps(+1 Wizard) \index[stuff]{staff} \index[stuff]{crown} \index[stuff]{necklace}
+	\myitem Instrument \smallcaps(+1 Bard) \index[stuff]{intrument}
 	\myitem Undead Pet \smallcaps(+1 Thief)
 	\end{itemize}
 \item Choose a tag from each row 
@@ -679,13 +684,13 @@ When you use a player character or a friendly NPC's dead body in a necromantic r
 %% ---   ---   ---   ---   ---   
 \chapter{Horde}\index{Horde}
 
-It's a big ole dungeon, and a short fast life. Wanna buy some specs to watch it go by?
+It's a big ole dungeon, and a short fast life. Wanna buy some specs\index[stuff]{spectacles} to watch it go by?
 
 \marginnote{Name: Scumpit; Noerag; Hurly; Dai Drawpaw; Gnolly \bigskip}
 \marginnote{Appearance (choose 1-3): Scaly; slimy; hairy; well-dressed; hat-wearing; long fingered\bigskip}
 \marginnote{Statistics: \smallcaps{Thief +3}.  +1 and -1 to any of the others \bigskip}
-\marginnote{Job(Pick 1): Tinker; Herder; Hawker; Dung-farmer \bigskip}
-\marginnote{Demon(Pick 3): Loneliness; Cannibalism; Mother-in-Law; Predators; Disease\bigskip}
+\marginnote{Job(Pick 1): Tinker; Herder; Hawker; Dung-farmer \bigskip} 
+\marginnote{Demon(Pick 3): Loneliness; Cannibalism; Mother-in-Law; Predators; Disease\index[stuff]{disease}\bigskip}
 \marginnote{Hobbies (fill in during play): 
 \begin{itemize}
 \item [][][][] 
@@ -729,7 +734,7 @@ At the start of the session \smallcaps{roll+thief} on behalf of the wider horde:
 	\begin{itemize}
 	\myitem food
 	\myitem safe rooms
-	\myitem medicine
+	\myitem medicine \index[stuff]{medicine}
 	\end{itemize}
 \end{itemize}
 
@@ -759,8 +764,8 @@ When you spend time working to make or understand a trap \smallcaps{Roll+Thief}
 	\myitem the trigger is reliable and in your control
 	\myitem the trap is well hidden
 	\myitem the trap resets automatically
-	\myitem the pit/ropes stops people escaping
-	\myitem the gas/darts has a room wide effect
+	\myitem the pit/ropes stops people escaping \index[stuff]{ropes}
+	\myitem the gas/darts has a room wide effect \index[stuff]{gas} \index[stuff]{darts}
 	\myitem the trap does not inflict permanent damage
 	\myitem the trap can be dismantled for a useful part
 	\end{itemize}
@@ -808,7 +813,7 @@ Big and old and alone. For ages past. For now.
 \marginnote{Appearance (choose 1-3): extra legs, albino, bedraggled, too many eyes\bigskip}
 \marginnote{Statistics: \smallcaps{Fighter +2, Thief +1, Health+3}. Your max health is 12 \bigskip}
 \marginnote{Job(Pick 1): Trophy pet; Native; Fresh Meat; Haulage \bigskip}
-\marginnote{Demon(Pick 3): Fire; suffocation; open spaces; master's displeasure; bells\bigskip}
+\marginnote{Demon(Pick 3): Fire; suffocation; open spaces; master's displeasure; bells\bigskip} \index[stuff]{bells}
 \marginnote{Hobbies (fill in during play): 
 \begin{itemize}
 \item [][][][] 
@@ -834,7 +839,7 @@ You have a countdown stat. It starts at 35. You can reroll a failed roll but the
 \begin{itemize}
 \item die of old age
 \item give birth
- \item need to return to the spawning pool
+ \item need to return to the spawning pool \index[stuff]{spawning pool}
 \item crave a mate
 \item enter a mindless hunger frenzy
 \item change into a radically different form
@@ -903,7 +908,7 @@ At the beginning of the session \smallcaps{roll+thief}
 \begin{itemize}
 \item On a 10+ hold one+1
 \item On a 7-9 hold one
-\item At any time you or the GM can spend your hold to have you already be there, with or without clear eXplanation. If your hold was one+1, take +1 to your next move now. Mark Xp when the hold is used.
+\item At any time you or the GM can spend your hold to have you already be there, with or without clear explanation. If your hold was one+1, take +1 to your next move now. Mark Xp when the hold is used.
 \item On a 6- the GM holds one and can spend it to have you there already but somehow pinned, caught or trapped.
 \end{itemize}
 
@@ -918,7 +923,7 @@ Dolem is. Dolem does. Dolem thinks. Dolem isn't.
 \marginnote{Appearance (choose 1-3): polished; china; clockwork; runic panels; stonework\bigskip}
 \marginnote{Statistics: \smallcaps{Thief +2, Fighter +1}.  +1 and -1 to any of the others \bigskip}
 \marginnote{Job(Pick 1): Savant; Servant; Hunter; Quartermaster \bigskip}
-\marginnote{Demon(Pick 3): Replacement; Corrosion; Lies; Mirrors; Innocence destroyed\bigskip}
+\marginnote{Demon(Pick 3): Replacement; Corrosion; Lies; Mirrors; Innocence destroyed\bigskip} \index[stuff]{mirror} \index[stuff]{corrosion}
 \marginnote{Hobbies (fill in during play): 
 \begin{itemize}
 \item [][][][] 
@@ -959,15 +964,15 @@ When you want to mimic some everyday fantasy dungeon object \smallcaps{roll + Th
 \end{itemize}
 
 \section{Elemental Engine}\index{Elemental Engine: move}
-When you consume a large quantity of an appropriate fuel, \smallcaps{roll + thief}
+When you consume a large quantity of an appropriate fuel, \smallcaps{roll + thief} \index[stuff]{fuel}
 \begin{itemize}
 \item On a 10+ hold 3
 \item On a 7-9+ hold 1
 \item On a 6- hold 1 but suffer appropriate symptoms of indigestion at the worst possible time.
 \item spend hold 1 for 1 as required for a scene
 	\begin{itemize}
-	\myitem \smallcaps{+1 Fighter} Consume flammable fuel or metal items
-	\myitem \smallcaps{+1 thief} Consume fabrics, inks or poisons
+	\myitem \smallcaps{+1 Fighter} Consume flammable fuel or metal items \index[stuff]{metal}
+	\myitem \smallcaps{+1 thief} Consume fabrics, inks or poisons \index[stuff]{fabric} \index[stuff]{ink} \index[stuff]{poions}
 	\end{itemize}
 \end{itemize}
 
@@ -984,7 +989,7 @@ When you pretend to be an NPC you know well enough to simulate \smallcaps{roll+t
 \item On a 6- You get the simulation up and running, but something else happens before you can use it, or turn it off.
 \end{itemize}
 
-\section{A million monkeys}\index{A million monkeys: move}
+\section{A million monkeys}\index{A million monkeys: move} \index[stuff]{paper} \index[stuff]{ink}
 When you have time, safety and your weight in paper and ink, you may write continuously for a day and night. For this feat of endurance, \smallcaps{roll+fighter}:
 \begin{itemize}
 \item On a 10+ you have discovered a new valuable spell
@@ -1024,7 +1029,23 @@ l
 
 
 
+%% ---   ---   ---   ---   ---   
+\chapter{On Magic}
 
+%% ---   ---   ---   ---   ---   
+\chapter{Game Master Playbook}
+
+
+%% ---   ---   ---   ---   ---   
+\chapter{Designer Notes}
+
+Rule 1 - No Exceptions
+Rule 2 - Needs to work for a one shot with strangers at a conference
+Rule 3 - Evoke, not mimic, old school fighting fantasy
+Rule 4 - Support the GM
+Rule 5 - Every mechanical part needs to justify its existence
+Rule 6 - Every move needs to relate back to theme or the mechanics
+Rule 7 - No stat substitution moves
 
 
 
@@ -1043,6 +1064,7 @@ l
 \bibliography{sample-handout}
 \bibliographystyle{plainnat}
 
+\printindex[stuff]
 
 \printindex
 
